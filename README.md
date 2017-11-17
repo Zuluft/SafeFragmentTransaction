@@ -53,15 +53,9 @@ When adding, replaceing or poping fragments, write the following:
 ...
 getSafeFragmentTransaction().registerFragmentTransition(fragmentManager ->
                     fragmentManager.popBackStackImmediate()
-                    ...
                     fragmentManager.beginTransaction()
-                            .add(R.id.content1,
-                                    new Fragment1(),
-                                    "TAG1")
-                            .replace(R.id.content2,
-                                    new Fragment2(),
-                                    "TAG2")
-                            ...
+                            .add(R.id.content1, new Fragment1(), "TAG1")
+                            .replace(R.id.content2, new Fragment2(), "TAG2")
                             .commit());
 ...
 ```

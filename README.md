@@ -48,7 +48,7 @@ private SafeFragmentTransaction mSafeFragmentTransaction;
 
 ## Step 2:
 
-When adding, replaceing or poping fragments, write the following:
+When adding, replacing or poping fragments, write the following:
 ```Java
 ...
 getSafeFragmentTransaction().registerFragmentTransition(fragmentManager ->

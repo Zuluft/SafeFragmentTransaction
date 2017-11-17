@@ -3,7 +3,7 @@ I'm sure that every android developer has faced exception
 
 ```java.lang.IllegalStateException: Can not perform this action after onSaveInstanceState``` 
 
-after ```fragmentTransaction.commit()``` or ```fragmentManager.popBackStack(...)``` when these commands are being called when activity is paused. To avoid this, use ```SafeFragmentTransaction```. If activity is paused and fragment transactions are requested, ```SafeFragmentTransaction``` ensures that these transactions will be executed after activity comes alive. So there are no crashes and life is beautiful. 
+after ```fragmentTransaction.commit()``` or ```fragmentManager.popBackStack(...)``` when activity is paused. To avoid this, use ```SafeFragmentTransaction```. If activity is paused and fragment transactions are requested, ```SafeFragmentTransaction``` ensures that these transactions will be executed after activity comes alive. So there are no crashes and life is beautiful. 
 It's very very easy to use:
 
 ## Gradle:

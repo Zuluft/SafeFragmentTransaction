@@ -72,4 +72,4 @@ You can use ```SafeFragmentTransaction``` for child fragments too. Write the fol
 mSafeFragmentTransaction = SafeFragmentTransaction.createInstance(getLifecycle(),
                 getChildFragmentManager());
 ```
-And use it as it shown in ## step 2.
+And use it as it shown in  ```step 2```.

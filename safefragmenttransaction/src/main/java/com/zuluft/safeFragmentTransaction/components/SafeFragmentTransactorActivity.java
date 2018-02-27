@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.zuluft.safeFragmentTransaction.SafeFragmentTransaction;
 
-public class SafeFragmentTransactorActivity
+public abstract class SafeFragmentTransactorActivity
         extends
         AppCompatActivity {
 
@@ -16,9 +16,17 @@ public class SafeFragmentTransactorActivity
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mSafeFragmentTransaction = SafeFragmentTransaction.createInstance(getLifecycle(),
+        Object nonConfigInstance = getLastCustomNonConfigurationInstance();
+        if (nonConfigInstance == null || ((CustomNonConfigInstance) nonConfigInstance)
+                .safeFragmentTransaction == null) {
+            mSafeFragmentTransaction = SafeFragmentTransaction
+                    .createInstance();
+        } else {
+            mSafeFragmentTransaction = ((CustomNonConfigInstance) nonConfigInstance)
+                    .safeFragmentTransaction;
+        }
+        mSafeFragmentTransaction.attachLifecycle(getLifecycle(),
                 getSupportFragmentManager());
-        getLifecycle().addObserver(mSafeFragmentTransaction);
     }
 
     public final SafeFragmentTransaction getSafeFragmentTransaction() {
@@ -28,5 +36,32 @@ public class SafeFragmentTransactorActivity
             );
         }
         return mSafeFragmentTransaction;
+    }
+
+
+    public Object onRetainOtherNonConfigInstance() {
+        return null;
+    }
+
+    @SuppressWarnings("unused")
+    @Nullable
+    public final Object getLastOtherNonConfigInstance() {
+        return ((CustomNonConfigInstance) getLastCustomNonConfigurationInstance()).other;
+    }
+
+    @Override
+    public final Object onRetainCustomNonConfigurationInstance() {
+        return new CustomNonConfigInstance(
+                mSafeFragmentTransaction,
+                onRetainOtherNonConfigInstance()
+        );
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mSafeFragmentTransaction != null) {
+            mSafeFragmentTransaction.detachLifecycle();
+        }
+        super.onDestroy();
     }
 }

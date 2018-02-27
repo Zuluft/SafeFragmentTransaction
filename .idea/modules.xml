@@ -3,11 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SafeFragmentTransaction.iml" filepath="$PROJECT_DIR$/SafeFragmentTransaction.iml" />
-      <module fileurl="file://C:\Users\giodz\AndroidStudioProjects\SafeFragmentTransaction\SafeFragmentTransaction.iml" filepath="C:\Users\giodz\AndroidStudioProjects\SafeFragmentTransaction\SafeFragmentTransaction.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\giodz\AndroidStudioProjects\SafeFragmentTransaction\app\app.iml" filepath="C:\Users\giodz\AndroidStudioProjects\SafeFragmentTransaction\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/safefragmenttransaction/safefragmenttransaction.iml" filepath="$PROJECT_DIR$/safefragmenttransaction/safefragmenttransaction.iml" />
-      <module fileurl="file://C:\Users\giodz\AndroidStudioProjects\SafeFragmentTransaction\safefragmenttransaction\safefragmenttransaction.iml" filepath="C:\Users\giodz\AndroidStudioProjects\SafeFragmentTransaction\safefragmenttransaction\safefragmenttransaction.iml" />
     </modules>
   </component>
 </project>

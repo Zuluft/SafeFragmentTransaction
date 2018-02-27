@@ -1,7 +1,6 @@
 package com.zuluft.sample;
 
 import android.os.Bundle;
-import android.os.Handler;
 
 import com.zuluft.safeFragmentTransaction.components.SafeFragmentTransactorActivity;
 
@@ -13,7 +12,9 @@ public class MainActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        new Handler().postDelayed(this::drawFragment, 1000);
+        if (getSupportFragmentManager().findFragmentById(R.id.flMainContent) == null) {
+            drawFragment();
+        }
     }
 
     private void drawFragment() {

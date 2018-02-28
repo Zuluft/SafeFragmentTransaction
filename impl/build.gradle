@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
-group = 'com.github.Zuluft.SafeFragmentTransaction'
+group = 'com.github.Zuluft.SafeFragmentTransaction.impl'
 
 android {
     compileSdkVersion 27

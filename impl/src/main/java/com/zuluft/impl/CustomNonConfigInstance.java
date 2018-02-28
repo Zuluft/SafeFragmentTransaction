@@ -1,4 +1,4 @@
-package com.zuluft.safeFragmentTransaction.components;
+package com.zuluft.impl;
 
 
 import android.support.annotation.Nullable;
@@ -11,7 +11,7 @@ final class CustomNonConfigInstance {
     final Object other;
 
     CustomNonConfigInstance(@Nullable final SafeFragmentTransaction safeFragmentTransaction,
-                                   @Nullable final Object other) {
+                            @Nullable final Object other) {
         this.safeFragmentTransaction = safeFragmentTransaction;
         this.other = other;
     }

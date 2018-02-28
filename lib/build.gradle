@@ -1,14 +1,18 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.github.Zuluft'
 
 android {
     compileSdkVersion 27
+
     defaultConfig {
-        applicationId "com.zuluft.safefragmenttransaction"
         minSdkVersion 14
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -16,15 +20,9 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.0.2'
-    implementation project(':impl')
-    implementation project(':lib')
 }

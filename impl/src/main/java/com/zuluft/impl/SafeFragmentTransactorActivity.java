@@ -1,4 +1,4 @@
-package com.zuluft.safeFragmentTransaction.components;
+package com.zuluft.impl;
 
 
 import android.os.Bundle;
@@ -29,6 +29,7 @@ public abstract class SafeFragmentTransactorActivity
                 getSupportFragmentManager());
     }
 
+    @SuppressWarnings("unused")
     public final SafeFragmentTransaction getSafeFragmentTransaction() {
         if (mSafeFragmentTransaction == null) {
             throw new RuntimeException(
@@ -59,9 +60,9 @@ public abstract class SafeFragmentTransactorActivity
 
     @Override
     protected void onDestroy() {
+        super.onDestroy();
         if (mSafeFragmentTransaction != null) {
             mSafeFragmentTransaction.detachLifecycle();
         }
-        super.onDestroy();
     }
 }

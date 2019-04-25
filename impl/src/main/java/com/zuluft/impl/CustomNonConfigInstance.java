@@ -1,7 +1,8 @@
 package com.zuluft.impl;
 
 
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 import com.zuluft.safeFragmentTransaction.SafeFragmentTransaction;
 

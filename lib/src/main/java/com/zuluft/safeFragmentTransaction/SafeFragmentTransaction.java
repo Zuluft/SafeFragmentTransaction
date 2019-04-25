@@ -1,11 +1,13 @@
 package com.zuluft.safeFragmentTransaction;
 
 
-import android.arch.lifecycle.Lifecycle;
-import android.arch.lifecycle.LifecycleObserver;
-import android.arch.lifecycle.OnLifecycleEvent;
-import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentManager;
+
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleObserver;
+import androidx.lifecycle.OnLifecycleEvent;
 
 import java.util.Stack;
 
@@ -35,6 +37,7 @@ public class SafeFragmentTransaction
         }
     }
 
+    @SuppressWarnings("unused")
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     void onReadyToDoPendingTransactions() {
         doTransactions();

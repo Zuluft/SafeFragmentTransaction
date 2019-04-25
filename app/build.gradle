@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.zuluft.safefragmenttransaction"
         minSdkVersion 14
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -24,7 +24,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:27.0.2'
+    api 'androidx.appcompat:appcompat:1.0.2'
     implementation project(':impl')
     implementation project(':lib')
 }

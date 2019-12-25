@@ -30,18 +30,18 @@ or
 Write the following in your base activity:
 ```Java
 ...
-private SafeFragmentTransaction mSafeFragmentTransaction;
+private SafeFragmentTransaction safeFragmentTransaction;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mSafeFragmentTransaction = SafeFragmentTransaction.createInstance(getLifecycle(),
+        safeFragmentTransaction = SafeFragmentTransaction.createInstance(getLifecycle(),
                 getSupportFragmentManager());
-        getLifecycle().addObserver(mSafeFragmentTransaction);
+        getLifecycle().addObserver(safeFragmentTransaction);
     }
 
     public final SafeFragmentTransaction getSafeFragmentTransaction() {
-        return mSafeFragmentTransaction;
+        return safeFragmentTransaction;
     }
 ...
 ```
@@ -63,7 +63,7 @@ getSafeFragmentTransaction().registerFragmentTransition(fragmentManager ->
 You can use ```SafeFragmentTransaction``` for child fragments too. Write the following in ```onCreateView(...)``` of your fragment:
 
  ```Java
-mSafeFragmentTransaction = SafeFragmentTransaction.createInstance(getLifecycle(),
+safeFragmentTransaction = SafeFragmentTransaction.createInstance(getLifecycle(),
                 getChildFragmentManager());
 getLifecycle().addObserver(mSafeFragmentTransaction);
 ```
